@@ -1,0 +1,46 @@
+/*body{
+  
+  background-image: url("http://brucebauer.info/img/IFSC4396/webpage-background.jpg");
+    
+  background-repeat: repeat-x;
+  
+}*/
+
+.tab{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #060100;
+  
+}
+
+.tab button{
+  
+  background-color: black;
+  color: white;
+  float: left;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 12px;
+  transition: 0.3s;
+  
+}
+
+footer{
+  
+ background-color: black;
+ color: white;
+ padding: 1px 1px; 
+}
+
+h1{
+  
+  font-family:Candara ;
+}
+
+p{
+  text-align:left ;
+  font-family:Candara;
+  font-size: 19px;
+  
+}
