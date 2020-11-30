@@ -1,0 +1,63 @@
+
+#include "stdafx.h"
+#include<fstream>
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+
+int main()
+{
+	int j, i, numcorrect = 0, numstudents=0, counter[20][5] = { 0 };
+	ifstream fintest, finans;
+	fintest.open("tests.dat");
+	finans.open("answers.dat");
+	string key, id, response;
+	finans >> key;
+	fintest >> id >> response;
+	while (!fintest.eof())
+	{
+		numcorrect = 0;
+		numstudents++;
+		for (i = 0; i < 20; i++)
+		{
+  
+
+			if (key[i] == response[i])
+			{
+				numcorrect++;
+				
+			}
+			counter[i][response[i] - 'A']++;
+		}
+		cout << id << setw(7)<< numcorrect <<endl;
+		
+		fintest >> id >> response;
+	}
+	cout << " " << endl;
+	cout << "Number of Students=" << numstudents << endl;
+	cout << " " << endl;
+	cout<< "Questions"<< setw(11) << "A"<< setw(16) << "B"<< setw(16) << "C"<< setw(16) << "D"<< setw(16)<< "E" << endl;
+	cout << " " << endl;
+	for (i = 0;i < 20;i++)
+	{
+		cout<<setw(5) <<i + 1 << setw(8);
+		for (j = 0;j < 5;j++)
+		{
+			cout << setw(15) << counter[i][j];
+			if (key[i] - 'A' == j)
+			{
+				cout << "*";
+			}
+			else
+			{
+				cout << " ";
+			}
+		}
+		cout<<endl;
+	}
+	
+    return 0;
+}
+
